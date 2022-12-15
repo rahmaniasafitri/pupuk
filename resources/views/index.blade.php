@@ -338,224 +338,25 @@
         </div> 
 
         <div class="row awesome-project-content portfolio-container">
-
-          <!-- portfolio-item start -->
-          <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-app portfolio-item">
-            <div class="single-awesome-project">
-              <div class="awesome-img">
-                <a href="#"><img src="assets/img/portfolio/1.jpg" alt="" /></a>
-                <div class="add-actions text-center">
-                  <div class="project-dec">
-                    <a class="portfolio-lightbox" data-gallery="myGallery" href="assets/img/portfolio/1.jpg">
-                      <h4>Business</h4>
-                      <span>Pupuk Organik Sejahtera</span>
-                    </a>
-                  </div>
-                </div> 
-              </div> 
-            </div>
-          </div>
-          <!-- portfolio-item end -->
-
-          <!-- portfolio-item start -->
-          <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-web">
-            <div class="single-awesome-project">
-              <div class="awesome-img">
-                <a href="#"><img src="assets/img/portfolio/rsz_2.jpg" alt="" /></a>
-                <div class="add-actions text-center">
-                  <div class="project-dec">
-                    <a class="portfolio-lightbox" data-gallery="myGallery" href="assets/img/portfolio/2.jpg"> <span></span>
-                  
-                      <h4>Business</h4>
-                      <span>Pupuk Organik</span>
-                    </a>
-                  </div>
-                </div>
-              </div> 
-            </div> 
-          </div>
-          <!-- portfolio-item end -->
-
-          <!-- portfolio-item start -->
-          <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-card">
-            <div class="single-awesome-project">
-              <div class="awesome-img">
-                <a href="#"><img src="assets/img/portfolio/3.jpg">
-                <div class="add-actions text-center">
-                  <div class="project-dec">
-                    <a class="portfolio-lightbox" data-gallery="myGallery" href="assets/img/portfolio/3.jpg">
-                      <h4>Business</h4>
-                      <span>Pupuk Organik </span>
-                    </a>
+          @foreach($produk as $pr)
+            <!-- portfolio-item start -->
+            <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-app portfolio-item">
+              <div class="single-awesome-project">
+                <div class="awesome-img">
+                  <a href="#"><img src="assets/img/portfolio/{{ $pr->foto }}" alt="" /></a>
+                  <div class="add-actions text-center">
+                    <div class="project-dec">
+                      <a class="portfolio-lightbox" data-gallery="myGallery" href="assets/img/portfolio/{{ $pr->foto }}">
+                        <h4>Business</h4>
+                        <span>Pupuk Organik Sejahtera</span>
+                      </a>
+                    </div>
                   </div> 
-                </div>
-              </div> 
-            </div>
-          </div>
-           <!-- portfolio-item end -->
-
-          <!-- portfolio-item start -->
-          <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-web">
-            <div class="single-awesome-project">
-              <div class="awesome-img">
-                <a href="#"><img src="assets/img/portfolio/pupuk1.jpeg" alt="" /></a>
-                <div class="add-actions text-center">
-                  <div class="project-dec"> 
-                    <a class="portfolio-lightbox" data-gallery="myGallery" href="assets/img/portfolio/pupuk1.jpeg">
-                      <h4>Business</h4>
-                      <span>Pupuk Organik</span>
-                    </a>
-                  </div>
-                </div>
-              </div> 
-            </div>
-          </div>
-          <!-- portfolio-item end -->
-
-          <!-- portfolio-item start -->
-          <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-app">
-            <div class="single-awesome-project">
-              <div class="awesome-img">
-                <a href="#"><img src="assets/img/portfolio/pupuk2.jpeg" alt="" /></a>
-                <div class="add-actions text-center text-center">
-                  <div class="project-dec">
-                    <a class="portfolio-lightbox" data-gallery="myGallery" href="assets/img/portfolio/pupuk2.jpeg">
-                      <h4>Business</h4>
-                      <span>Pupuk Organik</span>
-                    </a>
-                  </div>
-                </div>
-              </div> 
-            </div>
-          </div>
-          <!-- portfolio-item end -->
-
-          <!-- portfolio-item start -->
-          <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-web">
-            <div class="single-awesome-project">
-              <div class="awesome-img">
-                <a href="#"><img src="assets/img/portfolio/1.jpg" alt="" /></a>
-                <div class="add-actions text-center">
-                  <div class="project-dec">
-                    <a class="portfolio-lightbox" data-gallery="myGallery" href="assets/img/portfolio/1.jpg">
-                      <h4>Business</h4>
-                      <span>Pupuk Organik</span>
-                    </a>
-                  </div>
                 </div> 
-              </div> 
-            </div>
-          </div>
-          <!-- portfolio-item end -->
-
-          !-- portfolio-item start -->
-          <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-web">
-            <div class="single-awesome-project">
-              <div class="awesome-img">
-                <a href="#"><img src="assets/img/portfolio/pupuk1.jpeg" alt="" /></a>
-                <div class="add-actions text-center">
-                  <div class="project-dec">
-                    <a class="portfolio-lightbox" data-gallery="myGallery" href="assets/img/portfolio/pupuk1.jpeg">
-                      <h4>Business</h4>
-                      <span>Pupuk Organik</span>
-                    </a>
-                  </div>
-                </div>
               </div>
             </div>
-          </div>
-          <!-- portfolio-item end -->
-
-          <!-- portfolio-item start -->
-          <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-app">
-            <div class="single-awesome-project">
-              <div class="awesome-img">
-                <a href="#"><img src="assets/img/portfolio/pupuk2.jpeg" alt="" /></a>
-                <div class="add-actions text-center text-center">
-                  <div class="project-dec">
-                    <a class="portfolio-lightbox" data-gallery="myGallery" href="assets/img/portfolio/pupuk2.jpeg">
-                      <h4>Business</h4>
-                      <span>Pupuk Organik</span>
-                    </a>
-                  </div>
-                </div> 
-              </div>  
-            </div> 
-          </div> 
-          <!-- portfolio-item end -->
-
-          <!-- portfolio-item start -->
-          <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-web">
-            <div class="single-awesome-project">
-              <div class="awesome-img">
-                <a href="#"><img src="assets/img/portfolio/1.jpg" alt="" /></a>
-                <div class="add-actions text-center">
-                  <div class="project-dec">
-                    <a class="portfolio-lightbox" data-gallery="myGallery" href="assets/img/portfolio/1.jpg">
-                      <h4>Business</h4>
-                      <span>Pupuk Organik</span>
-                    </a>
-                  </div>
-                </div> 
-              </div> 
-            </div>
-          </div>
-          <!-- portfolio-item end -->
-
-           <!-- portfolio-item start -->
-           <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-web">
-            <div class="single-awesome-project">
-              <div class="awesome-img">
-                <a href="#"><img src="assets/img/portfolio/pupuk1.jpeg" alt="" /></a>
-                <div class="add-actions text-center">
-                  <div class="project-dec">
-                    <a class="portfolio-lightbox" data-gallery="myGallery" href="assets/img/portfolio/pupuk1.jpeg">
-                      <h4>Business</h4>
-                      <span>Pupuk Organik</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- portfolio-item end -->
-
-          <!-- portfolio-item start -->
-          <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-app">
-            <div class="single-awesome-project">
-              <div class="awesome-img">
-                <a href="#"><img src="assets/img/portfolio/pupuk2.jpeg" alt="" /></a>
-                <div class="add-actions text-center text-center">
-                  <div class="project-dec">
-                    <a class="portfolio-lightbox" data-gallery="myGallery" href="assets/img/portfolio/pupuk2.jpeg">
-                      <h4>Business</h4>
-                      <span>Pupuk Organik</span>
-                    </a>
-                  </div>
-                </div>
-              </div> 
-            </div>
-          </div>
-          <!-- portfolio-item end -->
-
-          <!-- portfolio-item start -->
-          <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-web">
-            <div class="single-awesome-project">
-              <div class="awesome-img">
-                <a href="#"><img src="assets/img/portfolio/1.jpg" alt="" /></a>
-                <div class="add-actions text-center">
-                  <div class="project-dec">
-                    <a class="portfolio-lightbox" data-gallery="myGallery" href="assets/img/portfolio/1.jpg">
-                      <h4>Business</h4>
-                      <span>Pupuk Organik</span>
-                    </a>
-                  </div>
-                </div>  
-              </div> 
-            </div>   
-          </div>
-          <!-- portfolio-item end -->
-
+            <!-- portfolio-item end -->
+          @endforeach
 
         </div>
       </div>
@@ -577,7 +378,7 @@
               <h3>Kegunaan <br /> <span></span></h3>
               <ol>
                 @foreach($kegunaan as $kg)
-                  <li class="check"><i class="bi bi-check"></i><span> {{ $kg['Column 2'] }}</span></li>
+                  <li class="check"><i class="bi bi-check"></i><span> {{ $kg['value'] }}</span></li>
                 @endforeach
               </ol>
             </div>
@@ -588,7 +389,7 @@
               <h3>Kandungan Pupuk Organik Sejahtera<br /><span></span></h3>
               <ol>
                 @foreach($kandungan as $kd)
-                  <li class="check"><i class="bi bi-check"></i><span> {{ $kd['Column 2'] }}</span></li>
+                  <li class="check"><i class="bi bi-check"></i><span> {{ $kd['value'] }}</span></li>
                 @endforeach
               </ol>
             </div>
@@ -598,7 +399,7 @@
               <h3>Petunjuk Penggunaan<br /> <span></span></h3>
               <ol>
                 @foreach($petunjuk as $pt)
-                  <li class="check"><i class="bi bi-check"></i><span> {{ $pt['Column 2'] }}</span></li>
+                  <li class="check"><i class="bi bi-check"></i><span> {{ $pt['value'] }}</span></li>
                 @endforeach
               </ol>  
             </div>  

@@ -3,40 +3,58 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\tabel1;
-use App\Models\tabel2;
-use App\Models\tabel3;
-use App\Models\tabel4;
-use App\Models\tabel5;
+use App\Models\Kandungan;
+use App\Models\Kegunaan;
+use App\Models\Keunggulan;
+use App\Models\Petunjuk;
+use App\Models\Produk;
+use App\Models\Tentang;
 
 class HomeController extends Controller
 {
     //
     public function index () {
 
-// $kandungan = tabel1::all();
-        // $kegunaan = tabel2::all();
-        // $petunjuk = tabel3::all();
-        // $tentang = tabel4::all();
-
-        // $data = array(
-        //     'kandungan' => tabel1::all(),
-        //     'kegunaan' => tabel2::all(),
-        //     'petunjuk' => tabel3::all(),
-        //     'tentang' => tabel4::all()
-        // );
-
-        // dd($data);
-
-        // return view('index', $data);
-//limit
-
         return view('index',[
-            'kandungan' => tabel1::all(),
-            'kegunaan' => tabel2::all(),
-            'petunjuk' => tabel3::all(),
-            'tentang' => tabel4::all(),
-            'keunggulan' => tabel5::all(),
+            'kandungan' => Kandungan::all(),
+            'kegunaan' => Kegunaan::all(),
+            'keunggulan' => Keunggulan::all(),
+            'petunjuk' => Keunggulan::all(),
+            'produk' => Produk::all(),
+            'tentang' => Petunjuk::all(),
         ]);
+    }
+
+    public function kandungan () {
+        $data = Kandungan::all(); // ->first() ->get()
+        $data = array('datanya' => $data);
+        //return $data;
+        return view('home.kandungan', $data);
+    }
+
+    public function kegunaan () {
+        $data = Kegunaan::all(); // ->first() ->get()
+        $data = array('datanya' => $data);
+        // return $data;
+        return view('home.kegunaan', $data);
+    }
+
+    public function keunggulan () {
+        $data = Keunggulan::all(); // ->first() ->get()
+        $data = array('datanya' => $data);
+        return view('home.keunggulan', $data);
+    }
+
+    public function petunjuk () {
+        $data = Petunjuk::all(); // ->first() ->get()
+        $data = array('datanya' => $data);
+        return view('home.petunjuk', $data);
+    }
+
+    public function tentang () {
+        $data = Tentang::all(); // ->first() ->get()
+        $data = array('datanya' => $data);
+        // return $data;
+        return view('home.tentang', $data);
     }
 }

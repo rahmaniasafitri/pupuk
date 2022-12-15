@@ -6,12 +6,10 @@ use App\Models\tabel2;
 use App\Models\tabel3;
 use App\Models\tabel4;
 use App\Models\tabel5;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DashboardProduk;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\KandunganController;
-use App\Http\Controllers\KegunaanController;
-use App\Http\Controllers\PetunjukController;
-use App\Http\Controllers\TentangController;
-use App\Http\Controllers\KeunggulanController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,17 +23,28 @@ use App\Http\Controllers\KeunggulanController;
 */ 
 
 Route ::get('/', [HomeController::class, 'index']);
+Route ::get('/kandungan', [HomeController::class, 'kandungan'])->name('kandungan_index');
+Route ::get('/kegunaan', [HomeController::class, 'kegunaan'])->name('kegunaan_index');
+Route ::get('/petunjuk', [HomeController::class, 'petunjuk'])->name('petunjuk_index');
+Route ::get('/tentang', [HomeController::class, 'tentang'])->name('tentang_index');
+Route ::get('/keunggulan', [HomeController::class, 'keunggulan'])->name('keunggulan_index');
 
-Route ::get('/kandungan', [KandunganController::class, 'index'])->name('kandungan_index');
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::get('/logout', [LoginController::class, 'logout']);
 
-Route ::get('/kegunaan', [KegunaanController::class, 'index'])->name('kegunaan_index');
 
-Route ::get('/petunjuk', [PetunjukController::class, 'index'])->name('petunjuk_index');
-
-Route ::get('/tentang', [TentangController::class, 'index'])->name('tentang_index');
-
-Route ::get('/keunggulan', [KeunggulanController::class, 'index'])->name('keunggulan_index');
-
+// ADMIN PAGE
+Route::group(['prefix'=> 'admin','middleware'=>['auth']], function(){
+    Route::get('/', [DashboardController::class, 'index']);
+    Route::get('/dashboard', [DashboardController::class, 'index']);
+    Route::get('/feedback', [DashboardController::class, 'feedback']);
+    Route::get('/post', [DashboardController::class, 'post']);
+    Route::get('/setting', [DashboardController::class, 'setting']);
+    
+    Route::get('/produk', [DashboardProduk::class, 'index']);
+    Route::post('/produk', [DashboardProduk::class, 'postHandler']);
+});
 
 
 // bikin database
