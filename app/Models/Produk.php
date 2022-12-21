@@ -11,5 +11,4 @@ class Produk extends Model
 
     public $table = "produk";
     protected $guarded = ['id'];
-    public $timestamps = false;
 }

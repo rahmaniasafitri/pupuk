@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama')->default('');
             $table->string('foto')->default('');
+            $table->timestamps();
         });
     }
 

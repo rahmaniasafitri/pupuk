@@ -12,6 +12,8 @@
 			<tr>
 				<th>Nama</th>
 				<th>Foto</th>
+        <th style="width: 200px">Tanggal Dibuat</th>
+			  <th style="width: 200px">Tanggal Diedit</th>
 				<th class="text-center">Action</th>
 			</tr>
 		</thead>
@@ -22,6 +24,8 @@
           <td>
             <img src="/assets/img/portfolio/{{ $pr->foto }}" alt="" style="height: 40px">
           </td>
+          <td>{{ $pr->created_at }}</td>
+          <td>{{ $pr->updated_at }}</td>
           <td>
             <div class="action">
               <a href="#" class="button button-small" data-bs-toggle="modal" data-bs-target="#edit" onclick="edit({{ $pr->id }})">Edit</a>
