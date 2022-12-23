@@ -10,5 +10,6 @@ class Kandungan extends Model
     use HasFactory;
     
     public $table = "kandungan";
+    protected $guarded = ['id'];
     public $timestamps = false;
 }

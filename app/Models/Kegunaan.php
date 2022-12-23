@@ -10,5 +10,6 @@ class Kegunaan extends Model
     use HasFactory;
 
     public $table = "kegunaan";
+    protected $guarded = ['id'];
     public $timestamps = false;
 }

@@ -10,5 +10,6 @@ class Petunjuk extends Model
     use HasFactory;
 
     public $table = "petunjuk";
+    protected $guarded = ['id'];
     public $timestamps = false;
 }

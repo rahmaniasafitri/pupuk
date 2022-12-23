@@ -7,6 +7,7 @@ use App\Models\tabel3;
 use App\Models\tabel4;
 use App\Models\tabel5;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DashboardPost;
 use App\Http\Controllers\DashboardProduk;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
@@ -39,11 +40,13 @@ Route::group(['prefix'=> 'admin','middleware'=>['auth']], function(){
     Route::get('/', [DashboardController::class, 'index']);
     Route::get('/dashboard', [DashboardController::class, 'index']);
     Route::get('/feedback', [DashboardController::class, 'feedback']);
-    Route::get('/post', [DashboardController::class, 'post']);
     Route::get('/setting', [DashboardController::class, 'setting']);
     
     Route::get('/produk', [DashboardProduk::class, 'index']);
+    Route::get('/post', [DashboardPost::class, 'index']);
+    
     Route::post('/produk', [DashboardProduk::class, 'postHandler']);
+    Route::post('/post', [DashboardPost::class, 'postHandler']);
 });
 
 
