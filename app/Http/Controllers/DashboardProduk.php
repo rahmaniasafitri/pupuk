@@ -24,6 +24,10 @@ class DashboardProduk extends Controller
             $res = $this->update($request);
             return redirect('/admin/produk')->with($res['status'],$res['message']);
         }
+        if($request->submit=="foto"){
+            $res = $this->foto($request);
+            return redirect('/admin/produk')->with($res['status'],$res['message']);
+        }
         if($request->submit=="destroy"){
             $res = $this->destroy($request);
             return redirect('/admin/produk')->with($res['status'],$res['message']);
@@ -53,6 +57,21 @@ class DashboardProduk extends Controller
         $validatedData = $request->validate([
             'id'=>'required|numeric',
             'nama'=>'required',
+        ]);
+        
+        //Check if product is found
+        if(Produk::find($request->id)){
+            // Update produk
+            Produk::find($request->id)->update($validatedData);   
+            return ['status'=>'success','message'=>'Produk berhasil diedit']; 
+        }else{
+            return ['status'=>'error','message'=>'Produk tidak ditemukan'];
+        }
+    }
+
+    public function foto(Request $request){
+        $validatedData = $request->validate([
+            'id'=>'required|numeric',
             'foto' => 'image|file|max:1024',
         ]);
         
@@ -60,10 +79,10 @@ class DashboardProduk extends Controller
         if(Produk::find($request->id)){
             // Update foto
             $validatedData['foto'] = $request->file('foto')->getClientOriginalName();
-            $request->file('foto')->move(public_path('assets/img/produk'), $validatedData['foto']);
+            $request->file('foto')->move(public_path('assets/img/portfolio'), $validatedData['foto']);
             // Update produk
             Produk::find($request->id)->update($validatedData);   
-            return ['status'=>'success','message'=>'Produk berhasil diedit']; 
+            return ['status'=>'success','message'=>'Foto berhasil diedit']; 
         }else{
             return ['status'=>'error','message'=>'Produk tidak ditemukan'];
         }

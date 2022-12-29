@@ -29,6 +29,7 @@
           <td>
             <div class="action">
               <a href="#" class="button button-small" data-bs-toggle="modal" data-bs-target="#edit" onclick="edit({{ $pr->id }})">Edit</a>
+              <a href="#" class="button button-small" data-bs-toggle="modal" data-bs-target="#foto" onclick="foto({{ $pr->id }})">Edit Foto</a>
               <a href="#" class="button button-small button-danger" data-bs-toggle="modal" data-bs-target="#hapus" onclick="hapus({{ $pr->id }})">Delete</a>
             </div>
           </td>
@@ -90,6 +91,33 @@
                   <label class="required fw-bold mb-2">Nama</label>
                   <input type="text" class="form-control form-control-solid" id="en" name="nama" required>
                 </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary" name="submit" value="update">Simpan</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="foto" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Edit Foto Produk</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form class="form" method="post" action="" enctype="multipart/form-data">
+            @csrf
+            <input type="hidden" id="fi" name="id">
+            <div class="modal-body">
+              <div class="row g-9 mb-8">
                 <div class="col-12">
                   <label class="required fw-bold mb-2">Upload Foto :</label>
                   <input type="file" class="form-control form-control-solid" name="foto" required>
@@ -98,7 +126,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary" name="submit" value="update">Simpan</button>
+              <button type="submit" class="btn btn-primary" name="submit" value="foto">Simpan</button>
             </div>
           </form>
         </div>
@@ -136,6 +164,9 @@
     function edit(id){
       $("#ei").val(id);
       $("#en").val($("#n"+id).text());
+    }
+    function foto(id){
+      $("#fi").val(id);
     }
     function hapus(id){
       $("#hi").val(id);
